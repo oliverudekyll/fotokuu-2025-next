@@ -6,3 +6,20 @@ body {
 h1 {
   font-size: var(--font-size-title);
 }
+
+button,
+a {
+  filter: blur(0px);
+  opacity: 1;
+
+  cursor: pointer;
+  transition: filter 0.3s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+@media screen and (pointer: fine) {
+  button:hover,
+  a:hover {
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+}

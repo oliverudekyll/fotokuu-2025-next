@@ -1,3 +1,21 @@
+.page {
+  height: 100%;
+  width: 100%;
+  padding: var(--padding-l);
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--padding);
+
+  overflow: hidden;
+}
+
+@media screen and (width < 700px) {
+  .page {
+    padding: var(--padding-m);
+  }
+}
+
 .background-filter {
   position: fixed;
   width: 100%;
@@ -11,8 +29,6 @@
   width: 100%;
   height: 100%;
 
-  /* object-fit: cover; */
-
   pointer-events: none;
   overflow: hidden;
   z-index: 0;
@@ -21,10 +37,8 @@
 }
 
 .svg-main {
-  position: fixed;
   width: 100%;
   height: 100%;
-  padding: var(--padding-l);
 
   display: flex;
   justify-content: space-between;
@@ -33,10 +47,66 @@
   z-index: 1;
 }
 
-@media screen and (width < 700px) {
-  .svg-main {
-    padding: var(--padding-m);
-  }
+.menu {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: var(--padding-m);
+
+  z-index: 1;
+}
+
+.list-header {
+  font-family: var(--font-tonka);
+  font-size: var(--font-size-body);
+  font-variation-settings: var(--tonka-axes-ext);
+  font-weight: 800;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+
+  list-style: none;
+}
+
+.nav {
+  width: 100%;
+
+  z-index: 1;
+}
+
+.btn {
+  width: 100%;
+  padding: 0;
+  margin-bottom: -1rem;
+
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn__img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+}
+
+.btn:hover {
 }
 
 @keyframes breathe {
@@ -51,15 +121,30 @@
   }
 }
 
+@media screen and (width < 1000px) {
+  @keyframes breathe {
+    from,
+    to {
+      filter: blur(0px);
+      opacity: 1;
+    }
+    50% {
+      filter: blur(3px);
+      opacity: 0.7;
+    }
+  }
+}
+
 .svg-header,
 .svg-footer {
   width: 100%;
   max-width: 1800px;
-
-  animation: breathe 5s ease-in-out infinite;
 }
 
-.svg-footer {
+.svg {
+  animation: breathe 5s ease-in-out infinite;
+}
+.svg-footer .svg {
   animation-delay: 1s;
 }
 

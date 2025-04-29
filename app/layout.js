@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import SeoContent from "@/components/SeoContent/SeoContent";
 import "./_reset.css";
 import "./typography.css";
 import "./variables.css";
@@ -35,6 +36,19 @@ export const metadata = {
   title: "Tallinna Fotokuu 2025 / Tallinn Photomonth 2025",
   description:
     "Kaasaegse kunsti biennaal / Contemporary art biennial. 05.09.–31.10.2025",
+  openGraph: {
+    title: "Tallinna Fotokuu 2025 / Tallinn Photomonth 2025",
+    description:
+      "Kaasaegse kunsti biennaal / Contemporary art biennial. 05.09.–31.10.2025",
+    images: [
+      {
+        url: "assets/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tallinna Fotokuu 2025",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -66,8 +80,29 @@ export default function RootLayout({ children }) {
           as="image/svg+xml"
           href="assets/images/footer-mobile.svg"
         ></link>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="assets/favicon/apple-touch-icon.png"
+        ></link>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="assets/favicon/favicon-32x32.png"
+        ></link>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="assets/favicon/favicon-16x16.png"
+        ></link>
+        <link rel="manifest" href="assets/favicon/site.webmanifest"></link>
       </head>
-      <body className={`${tonka.variable} ${gauch.variable}`}>{children}</body>
+      <body className={`${tonka.variable} ${gauch.variable}`}>
+        {children}
+        <SeoContent />
+      </body>
     </html>
   );
 }
