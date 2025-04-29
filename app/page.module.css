@@ -33,7 +33,7 @@
   z-index: 1;
 }
 
-@media screen and (width < 800px) {
+@media screen and (width < 700px) {
   .svg-main {
     padding: var(--padding-m);
   }
