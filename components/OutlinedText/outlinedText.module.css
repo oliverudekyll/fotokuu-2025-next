@@ -1,0 +1,15 @@
+.wrapper {
+  position: relative;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+}
+
+.outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  paint-order: stroke fill;
+}

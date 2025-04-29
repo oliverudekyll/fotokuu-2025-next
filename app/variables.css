@@ -1,0 +1,14 @@
+:root {
+  --font-size-title: 3.25rem;
+  --font-size-subtitle: 1.4rem;
+  --font-size-body: 1.25rem;
+  --line-height-body: 1.2;
+  --tonka-axes-ext: "wdth" 300;
+
+  --padding-xs: calc(var(--padding) * 0.25);
+  --padding-s: calc(var(--padding) * 0.5);
+  --padding: 1rem;
+  --padding-m: calc(var(--padding) * 2);
+  --padding-l: calc(var(--padding) * 4);
+  --padding-xl: calc(var(--padding) * 8);
+}
