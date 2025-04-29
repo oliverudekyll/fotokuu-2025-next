@@ -81,6 +81,26 @@ export default function RootLayout({ children }) {
           href="assets/images/footer-mobile.svg"
         ></link>
         <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/button-menu.svg"
+        ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/button-close.svg"
+        ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/button-menu-mobile.svg"
+        ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/button-close-mobile.svg"
+        ></link>
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="assets/favicon/apple-touch-icon.png"
