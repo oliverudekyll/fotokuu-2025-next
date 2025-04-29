@@ -55,6 +55,16 @@ export default function RootLayout({ children }) {
           as="image/svg+xml"
           href="assets/images/footer.svg"
         ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/header-mobile.svg"
+        ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/footer-mobile.svg"
+        ></link>
       </head>
       <body className={`${tonka.variable} ${gauch.variable}`}>{children}</body>
     </html>
