@@ -5,6 +5,37 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div>
+      <div className={styles["svg-main"]}>
+        <div className={styles["svg-header"]}>
+          <picture>
+            <source
+              media="(max-width: 1000px)"
+              srcSet="/assets/images/header-mobile.svg"
+            ></source>
+            <img src="/assets/images/header.svg"></img>
+          </picture>
+        </div>
+        <div className={styles["svg-footer"]}>
+          <picture>
+            <source
+              media="(max-width: 1000px)"
+              srcSet="/assets/images/footer-mobile.svg"
+            ></source>
+            <img src="/assets/images/footer.svg"></img>
+          </picture>
+        </div>
+      </div>
+      <div className={styles["background-wrapper"]}></div>
+      <Image
+        src={"/assets/images/background-desktop.jpg"}
+        quality={90}
+        priority
+        fill
+        alt="Abstract gradient background"
+        aria-hidden="true"
+        role="presentation"
+        className={styles.background}
+      />
       <main className={styles.main}>
         <header className={styles.header}>
           <div className={styles["title-container"]}>
@@ -26,17 +57,6 @@ export default function Home() {
           <p lang="et">Rohkem infot juunis 2025</p>
           <p lang="en">More info in June 2025</p>
         </footer>
-        <Image
-          src={"/assets/images/background-desktop.jpg"}
-          width={2560}
-          height={1440}
-          quality={85}
-          priority
-          alt="Abstract gradient background"
-          aria-hidden="true"
-          role="presentation"
-          className={styles.background}
-        />
       </main>
     </div>
   );

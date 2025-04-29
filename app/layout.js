@@ -39,6 +39,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image/jpeg"
+          href="assets/images/background-desktop.jpg"
+        ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/header.svg"
+        ></link>
+        <link
+          rel="preload"
+          as="image/svg+xml"
+          href="assets/images/footer.svg"
+        ></link>
+      </head>
       <body className={`${tonka.variable} ${gauch.variable}`}>{children}</body>
     </html>
   );

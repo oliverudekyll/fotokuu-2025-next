@@ -1,15 +1,63 @@
+.background-filter {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  backdrop-filter: blur(10px);
+}
+
 .background {
   position: fixed;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
 
-  object-fit: cover;
+  /* object-fit: cover; */
 
-  filter: blur(5px);
   pointer-events: none;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
+
+  animation: breatheBackground 5s ease-in-out infinite;
 }
+
+.svg-main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: var(--padding-l);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column nowrap;
+  z-index: 1;
+}
+
+@media screen and (width < 800px) {
+  .svg-main {
+    padding: var(--padding-m);
+  }
+}
+
+@keyframes breathe {
+  from,
+  to {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(2px);
+  }
+}
+
+.svg-header,
+.svg-footer {
+  width: 100%;
+  max-width: 1800px;
+
+  animation: breathe 5s ease-in-out infinite;
+}
+
+/* SEO CONTENT */
 
 .main {
   width: 100%;
@@ -22,6 +70,9 @@
 
   color: white;
   overflow: hidden;
+  z-index: -2;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .header {
@@ -77,10 +128,7 @@
   text-align: center;
   white-space: nowrap;
 
-  border-radius: 0.5rem;
-  background-color: black;
-
-  /* -webkit-text-stroke: black 0.75rem;
+  -webkit-text-stroke: black 0.75rem;
   paint-order: stroke fill;
-  stroke-linejoin: round; */
+  stroke-linejoin: round;
 }
