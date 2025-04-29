@@ -32,8 +32,9 @@ const gauch = localFont({
 });
 
 export const metadata = {
-  title: "Fotokuu 2025",
-  description: "Kaasaegse kunsti biennaal",
+  title: "Tallinna Fotokuu 2025 / Tallinn Photomonth 2025",
+  description:
+    "Kaasaegse kunsti biennaal / Contemporary art biennial. 05.09.–31.10.2025",
 };
 
 export default function RootLayout({ children }) {
