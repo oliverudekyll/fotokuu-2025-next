@@ -164,8 +164,10 @@ export default function Home() {
                   media="(max-width: 1000px)"
                 ></source>
                 <img
+                  height="37.52px"
                   className={styles["btn__img"]}
                   src={`/assets/images/button-menu.svg`}
+                  alt="Menu"
                 ></img>
               </motion.picture>
             )}
@@ -182,8 +184,10 @@ export default function Home() {
                   media="(max-width: 1000px)"
                 ></source>
                 <img
+                  height="37.52px"
                   className={styles["btn__img"]}
                   src={`/assets/images/button-close.svg`}
+                  alt="Close"
                 ></img>
               </motion.picture>
             )}
