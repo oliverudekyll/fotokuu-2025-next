@@ -57,49 +57,25 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="preload"
-          as="image/jpeg"
-          href="assets/images/background-desktop.jpg"
+          as="image"
+          href="assets/images/background.jpg"
         ></link>
         <link
           rel="preload"
-          as="image/svg+xml"
-          href="assets/images/header.svg"
+          as="image"
+          href="assets/images/header-title.svg"
         ></link>
         <link
           rel="preload"
-          as="image/svg+xml"
-          href="assets/images/footer.svg"
+          as="image"
+          href="assets/images/header-date.svg"
         ></link>
         <link
           rel="preload"
-          as="image/svg+xml"
-          href="assets/images/header-mobile.svg"
+          as="image"
+          href="assets/images/footer-announcement.svg"
         ></link>
-        <link
-          rel="preload"
-          as="image/svg+xml"
-          href="assets/images/footer-mobile.svg"
-        ></link>
-        <link
-          rel="preload"
-          as="image/svg+xml"
-          href="assets/images/button-menu.svg"
-        ></link>
-        <link
-          rel="preload"
-          as="image/svg+xml"
-          href="assets/images/button-close.svg"
-        ></link>
-        <link
-          rel="preload"
-          as="image/svg+xml"
-          href="assets/images/button-menu-mobile.svg"
-        ></link>
-        <link
-          rel="preload"
-          as="image/svg+xml"
-          href="assets/images/button-close-mobile.svg"
-        ></link>
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
