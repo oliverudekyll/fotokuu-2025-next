@@ -5,7 +5,12 @@
 }
 
 body {
-  font-family: var(--font-gauch), var(--font-fallback-sans);
+  font-family: var(--font-tonka);
+  font-variation-settings: "wdth" 200;
+}
+
+body * {
+  box-sizing: border-box;
 }
 
 .main-seo {

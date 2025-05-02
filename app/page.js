@@ -37,163 +37,122 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <AnimatePresence mode="wait">
-        {!isMenuOpen && (
+      <div className={styles["svg-main"]}>
+        <AnimatePresence>
           <motion.div
-            key="main"
-            initial={hidden}
-            animate={visible}
-            exit={hidden}
-            transition={transition}
-            className={styles["svg-main"]}
+            initial={{
+              scale: 1,
+            }}
+            animate={{
+              scale: isMenuOpen ? 0.75 : 1,
+            }}
+            exit={{
+              scale: 1,
+            }}
+            transition={{ duration: 0.3 }}
+            className={styles["svg-header"]}
           >
-            <div className={styles["svg-header"]}>
-              <picture>
-                <source
-                  media="(max-width: 1000px)"
-                  srcSet="/assets/images/header-mobile.svg"
-                ></source>
-                <img
-                  className={styles["svg"]}
-                  src="/assets/images/header.svg"
-                ></img>
-              </picture>
-            </div>
-            <div className={styles["svg-footer"]}>
-              <picture className={styles["svg"]}>
-                <source
-                  media="(max-width: 1000px)"
-                  srcSet="/assets/images/footer-mobile.svg"
-                ></source>
-                <img
-                  className={styles["svg"]}
-                  src="/assets/images/footer.svg"
-                ></img>
-              </picture>
-            </div>
+            <img
+              className={styles["svg"]}
+              src="/assets/images/header-title.svg"
+            ></img>
           </motion.div>
-        )}
-        {isMenuOpen && (
-          <motion.div
-            key="menu"
-            className={styles.menu}
-            initial={hidden}
-            animate={visible}
-            exit={hidden}
-            transition={transition}
-          >
-            <div className={styles["list-block"]}>
-              <ul className={styles.list}>
-                <Link className={styles["list-header"]} href="#">
-                  Facebook
-                </Link>
-                <Link className={styles["list-header"]} href="#">
-                  Instagram
-                </Link>
-              </ul>
-            </div>
-            <div className={styles["list-block"]}>
+        </AnimatePresence>
+        <AnimatePresence mode="wait">
+          {!isMenuOpen && (
+            <motion.div
+              key="main"
+              initial={hidden}
+              animate={visible}
+              exit={hidden}
+              transition={transition}
+              className={styles["svg-container"]}
+            >
+              <img
+                className={styles["svg"]}
+                src="/assets/images/header-date.svg"
+              ></img>
+
+              <footer className={styles.footer}>
+                <img
+                  className={styles["svg-footer"]}
+                  src="/assets/images/footer-announcement.svg"
+                ></img>
+
+                <div className={styles["links"]}>
+                  <button
+                    aria-label={"Open archive"}
+                    onClick={() => {
+                      setIsMenuOpen(true);
+                    }}
+                    className={styles.button}
+                  >
+                    Arhiiv/Archive
+                  </button>
+                  <ul className={styles.list}>
+                    <a
+                      className={styles["button"]}
+                      href="https://www.facebook.com/Fotokuu/"
+                    >
+                      Facebook
+                    </a>
+                    <a
+                      className={styles["button"]}
+                      href="https://www.instagram.com/tallinn_photomonth/"
+                    >
+                      Instagram
+                    </a>
+                  </ul>
+                </div>
+              </footer>
+            </motion.div>
+          )}
+          {isMenuOpen && (
+            <motion.div
+              key="menu"
+              initial={hidden}
+              animate={visible}
+              exit={hidden}
+              transition={transition}
+              className={styles["menu"]}
+            >
               <h2 className={styles["list-header"]}>Arhiiv/Archive</h2>
-              <ul className={styles.list}>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.2023.fotokuu.ee"
-                >
-                  2023
-                </Link>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.2019.fotokuu.ee"
-                >
-                  2019
-                </Link>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.2017.fotokuu.ee"
-                >
-                  2017
-                </Link>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.2015.fotokuu.ee"
-                >
-                  2015
-                </Link>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.2013.fotokuu.ee"
-                >
-                  2013
-                </Link>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.2011.fotokuu.ee"
-                >
-                  2011
-                </Link>
+              <ul className={styles["list"]}>
+                <li>
+                  <a href="https://2023.fotokuu.ee">2023</a>
+                </li>
+                <li>
+                  <a href="https://2021.fotokuu.ee">2021</a>
+                </li>
+                <li>
+                  <a href="https://2019.fotokuu.ee">2019</a>
+                </li>
+                <li>
+                  <a href="https://2017.fotokuu.ee">2017</a>
+                </li>
+                <li>
+                  <a href="https://2015.fotokuu.ee">2015</a>
+                </li>
+                <li>
+                  <a href="https://2013.fotokuu.ee">2013</a>
+                </li>
+                <li>
+                  <a href="https://2011.fotokuu.ee">2011</a>
+                </li>
               </ul>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <nav className={styles.nav}>
-        <button
-          className={styles.btn}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-          }}
-        >
-          <AnimatePresence mode="wait">
-            {!isMenuOpen && (
-              <motion.picture
-                key="menu"
-                initial={hiddenStill}
-                animate={visibleStill}
-                exit={hiddenStill}
-                transition={transition}
+              <button
+                aria-label={"Open archive"}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
+                className={styles["button"]}
               >
-                <source
-                  srcSet={`/assets/images/button-menu-mobile.svg`}
-                  media="(max-width: 1000px)"
-                ></source>
-                <img
-                  height="37.52px"
-                  className={styles["btn__img"]}
-                  src={`/assets/images/button-menu.svg`}
-                  alt="Menu"
-                ></img>
-              </motion.picture>
-            )}
-            {isMenuOpen && (
-              <motion.picture
-                key="close"
-                initial={hiddenStill}
-                animate={visibleStill}
-                exit={hiddenStill}
-                transition={transition}
-              >
-                <source
-                  srcSet={`/assets/images/button-close-mobile.svg`}
-                  media="(max-width: 1000px)"
-                ></source>
-                <img
-                  height="37.52px"
-                  className={styles["btn__img"]}
-                  src={`/assets/images/button-close.svg`}
-                  alt="Close"
-                ></img>
-              </motion.picture>
-            )}
-          </AnimatePresence>
-        </button>
-      </nav>
+                ←
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
       <div className={styles["background-wrapper"]}></div>
       <Image
         src={"/assets/images/background.jpg"}
