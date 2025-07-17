@@ -76,7 +76,7 @@ export default function Home() {
               <footer className={styles.footer}>
                 <img
                   className={styles["svg-footer"]}
-                  src="/assets/images/footer-announcement.svg"
+                  src="/assets/images/footer-announcement-2.svg"
                 ></img>
 
                 <div className={styles["links"]}>
