@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
         <link
           rel="preload"
           as="image"
-          href="assets/images/footer-announcement.svg"
+          href="assets/images/footer-announcement-2.svg"
         ></link>
 
         <link
